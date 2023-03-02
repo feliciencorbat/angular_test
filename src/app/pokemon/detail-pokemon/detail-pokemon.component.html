@@ -1,0 +1,25 @@
+<div class="container">
+    <div *ngIf="pokemon" class="card">
+        <img class="card-img-top" [src]="pokemon.picture" alt="Card image cap">
+        <div class="card-body">
+            <h5 class="card-title">{{ pokemon.name }}</h5>
+            <p class="card-text">
+                Points de vie: {{ pokemon.hp }}
+            </p>
+            <p class="card-text">
+                Dégâts: {{ pokemon.cp }}
+            </p>
+            <p class="card-text">
+                {{ pokemon.created | date:"dd.MM.yyyy" }}
+            </p>
+            <span *ngFor="let type of pokemon.types" class="{{ type | pokemonTypeColor}}">
+                    {{ type }}
+                  </span>
+        </div>
+    </div>
+    <div *ngIf="!pokemon" >
+        <p>Pas de pokémon à afficher...</p>
+    </div>
+
+    <button (click)="goToPokemonList()">Retourner à la liste</button>
+</div>
