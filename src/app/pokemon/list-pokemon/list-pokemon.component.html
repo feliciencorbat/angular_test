@@ -1,16 +1,7 @@
 <div class="container">
-    <input
-        #input
-        (keyup.enter)="selectPokemon(input.value)"
-        type="number"
-    >
-    <p *ngIf="pokemonSelected">
-        Vous avez sélectionné le pokémon: {{ pokemonSelected.name }}
-    </p>
+    <app-search-pokemon></app-search-pokemon>
 
-    <p *ngIf="!pokemonSelected">
-        Aucun pokémon n'a été trouvé !
-    </p>
+    <button routerLink="/pokemon/add">Ajouter un pokémon</button>
 
     <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
         <div class="col" *ngFor="let pokemon of pokemonList">

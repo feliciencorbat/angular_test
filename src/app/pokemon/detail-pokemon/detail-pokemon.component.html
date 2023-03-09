@@ -16,10 +16,11 @@
                     {{ type }}
                   </span>
         </div>
+        <button (click)="goToPokemonList()">Retourner à la liste</button>
+        <button (click)="goToEditPokemon(pokemon)">Editer</button>
+        <button (click)="deletePokemon(pokemon)">Supprimer</button>
     </div>
     <div *ngIf="!pokemon" >
-        <p>Pas de pokémon à afficher...</p>
+        <app-loader></app-loader>
     </div>
-
-    <button (click)="goToPokemonList()">Retourner à la liste</button>
 </div>
